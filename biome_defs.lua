@@ -93,12 +93,12 @@ moretrees.sequoia_biome = {
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,
 	seed_diff = 333,
-	min_elevation = 0,
+	min_elevation = 3,
 	max_elevation = 10,
 	temp_min = 1,
 	temp_max = -0.4,
 	rarity = 90,
-	max_count = 5,
+	max_count = 1,
 	fill_ratio = 0.0001,
 }
 
@@ -112,7 +112,7 @@ moretrees.birch_biome = {
 	temp_min = 0.9,
 	temp_max = 0.3,
 	rarity = 50,
-	max_count = 10,
+	max_count = 6,
 	fill_ratio = 0.001,
 }
 
@@ -127,7 +127,7 @@ moretrees.willow_biome = {
 	near_nodes_size = 15,
 	near_nodes_count = 5,
 	rarity = 75,
-	max_count = 5,
+	max_count = 3,
 }
 
 moretrees.rubber_tree_biome = {

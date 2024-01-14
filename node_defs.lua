@@ -3,7 +3,6 @@ local S = minetest.get_translator("moretrees")
 moretrees.avoidnodes = {}
 
 moretrees.treelist = {
-	{"beech",        S("Beech Tree")},
 	{"apple_tree",   S("Apple Tree")},
 	{"oak",          S("Oak Tree"),       "acorn",                S("Acorn"), {-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
 	{"sequoia",      S("Giant Sequoia")},
@@ -21,19 +20,6 @@ moretrees.treelist = {
 }
 
 moretrees.treedesc = {
-	beech = {
-		trunk = S("Beech Tree Trunk"),
-		planks = S("Beech Tree Planks"),
-		sapling = S("Beech Tree Sapling"),
-		leaves = S("Beech Tree Leaves"),
-		trunk_stair = S("Beech Tree Trunk Stair"),
-		trunk_slab = S("Beech Tree Trunk Slab"),
-		planks_stair = S("Beech Tree Planks Stair"),
-		planks_slab = S("Beech Tree Planks Slab"),
-		fence = S("Beech Tree Fence"),
-		fence_rail = S("Beech Tree Fence Rail"),
-		fence_gate = S("Beech Tree Fence Gate"),
-	},
 	apple_tree = {
 		trunk = S("Apple Tree Trunk"),
 		planks = S("Apple Tree Planks"),
@@ -210,7 +196,7 @@ moretrees.treedesc = {
 
 
 -- local dirs1 = { 21, 20, 23, 22, 21 }
-local dirs2 = { 12, 9, 18, 7, 12 }
+-- local dirs2 = { 12, 9, 18, 7, 12 }
 -- local dirs3 = { 14, 11, 16, 5, 14 }
 
 local moretrees_new_leaves_drawtype = "allfaces_optional"
@@ -568,17 +554,6 @@ for i in ipairs(moretrees.treelist) do
 			})
 	end
 
-	minetest.register_abm({
-		nodenames = { "moretrees:"..treename.."_trunk_sideways" },
-		interval = 1,
-		chance = 1,
-		action = function(pos, node, active_object_count, active_object_count_wider)
-			local fdir = node.param2 or 0
-				local nfdir = dirs2[fdir+1]
-			minetest.add_node(pos, {name = "moretrees:"..treename.."_trunk", param2 = nfdir})
-		end,
-	})
-
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_trunk")
 
 	if moretrees.spawn_saplings then
@@ -716,17 +691,6 @@ minetest.register_node("moretrees:rubber_tree_trunk_empty", {
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	on_place = minetest.rotate_node,
-})
-
-minetest.register_abm({
-	nodenames = { "moretrees:rubber_tree_trunk_empty_sideways" },
-	interval = 1,
-	chance = 1,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		local fdir = node.param2 or 0
-			local nfdir = dirs2[fdir+1]
-		minetest.add_node(pos, {name = "moretrees:rubber_tree_trunk_empty", param2 = nfdir})
-	end,
 })
 
 -- For compatibility with old nodes, recently-changed nodes, and default nodes
