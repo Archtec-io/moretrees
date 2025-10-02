@@ -421,7 +421,6 @@ for i in ipairs(moretrees.treelist) do
 			tiles = {split_tn[2] and split_tn[2]=="small" and "moretrees_" .. treename .. "_sapling.png" or saptex},
 			inventory_image = split_tn[2] and split_tn[2]=="small" and "moretrees_" .. treename .. "_sapling.png" or saptex,
 			paramtype = "light",
-			paramtype2 = "waving",
 			walkable = false,
 			is_ground_content = true,
 			selection_box = {
@@ -480,7 +479,6 @@ for i in ipairs(moretrees.treelist) do
 		tiles = {split_tn[2] and split_tn[2]=="small" and "moretrees_" .. treename .. "_sapling.png" or saptex,},
 		inventory_image = split_tn[2] and split_tn[2]=="small" and "moretrees_" .. treename .. "_sapling.png" or saptex,
 		paramtype = "light",
-		paramtype2 = "waving",
 		walkable = false,
 		is_ground_content = true,
 		selection_box = {
